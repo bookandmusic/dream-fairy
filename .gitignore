@@ -1,0 +1,51 @@
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.keystore
+*.jks
+
+# Build outputs
+build/
+*.apk
+*.aab
+*.idsig
+*.hprof
+
+# Tauri build artifacts
+src-tauri/target/
+
+# Android build artifacts
+src-tauri/gen/android/.gradle/
+src-tauri/gen/android/build/
+src-tauri/gen/android/app/build/
+src-tauri/gen/android/buildSrc/.gradle/
+src-tauri/gen/android/buildSrc/build/
+src-tauri/gen/android/app/src/main/jniLibs/
+src-tauri/gen/android/app/src/main/java/com/game/dreamfairy/generated/
+src-tauri/gen/android/app/src/main/assets/tauri.conf.json
+
+# Rust compiled artifacts (but keep Cargo.lock for applications)
+*.so
+*.rlib
+*.a
+*.d
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local mise config
+.mise.local.toml

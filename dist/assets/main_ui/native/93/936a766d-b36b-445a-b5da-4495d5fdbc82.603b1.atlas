@@ -1,0 +1,62 @@
+
+10045_0.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Zx
+  rotate: true
+  xy: 70, 2
+  size: 42, 50
+  orig: 44, 50
+  offset: 1, 0
+  index: -1
+a3a
+  rotate: false
+  xy: 2, 117
+  size: 117, 135
+  orig: 117, 135
+  offset: 0, 0
+  index: -1
+a3b
+  rotate: true
+  xy: 2, 3
+  size: 41, 66
+  orig: 41, 66
+  offset: 0, 0
+  index: -1
+qx
+  rotate: true
+  xy: 126, 13
+  size: 47, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+zc01
+  rotate: false
+  xy: 2, 46
+  size: 122, 69
+  orig: 122, 69
+  offset: 0, 0
+  index: -1
+zc02
+  rotate: false
+  xy: 121, 183
+  size: 124, 69
+  orig: 124, 70
+  offset: 0, 1
+  index: -1
+zc03
+  rotate: false
+  xy: 121, 118
+  size: 124, 63
+  orig: 124, 63
+  offset: 0, 0
+  index: -1
+zc04
+  rotate: false
+  xy: 126, 62
+  size: 98, 54
+  orig: 98, 57
+  offset: 0, 1
+  index: -1

@@ -1,0 +1,76 @@
+
+10044_2.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+c01
+  rotate: true
+  xy: 2, 112
+  size: 135, 133
+  orig: 135, 133
+  offset: 0, 0
+  index: -1
+c02
+  rotate: false
+  xy: 2, 2
+  size: 150, 108
+  orig: 150, 108
+  offset: 0, 0
+  index: -1
+c04
+  rotate: true
+  xy: 197, 213
+  size: 15, 14
+  orig: 15, 14
+  offset: 0, 0
+  index: -1
+c05
+  rotate: true
+  xy: 154, 75
+  size: 42, 33
+  orig: 42, 33
+  offset: 0, 0
+  index: -1
+c06
+  rotate: true
+  xy: 137, 119
+  size: 47, 32
+  orig: 47, 32
+  offset: 0, 0
+  index: -1
+c07
+  rotate: false
+  xy: 171, 119
+  size: 17, 17
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+c08
+  rotate: false
+  xy: 197, 230
+  size: 17, 17
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+c09
+  rotate: false
+  xy: 171, 138
+  size: 26, 28
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+cgg_dg01
+  rotate: true
+  xy: 137, 168
+  size: 79, 58
+  orig: 81, 59
+  offset: 1, 0
+  index: -1
+cgg_dglz
+  rotate: false
+  xy: 197, 204
+  size: 7, 7
+  orig: 7, 8
+  offset: 0, 1
+  index: -1

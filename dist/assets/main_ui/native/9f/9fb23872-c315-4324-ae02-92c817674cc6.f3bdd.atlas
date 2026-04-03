@@ -1,0 +1,167 @@
+
+cow.png
+size: 256,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+b_body
+  rotate: 180
+  xy: 2, 297
+  size: 129, 116
+  orig: 131, 118
+  offset: 2, 2
+  index: -1
+b_ear02
+  rotate: 270
+  xy: 151, 41
+  size: 26, 17
+  orig: 27, 26
+  offset: 1, 3
+  index: -1
+b_ear_01
+  rotate: true
+  xy: 141, 137
+  size: 34, 23
+  orig: 34, 24
+  offset: 0, 0
+  index: -1
+b_head
+  rotate: false
+  xy: 2, 77
+  size: 84, 78
+  orig: 91, 80
+  offset: 1, 0
+  index: -1
+b_leg_01
+  rotate: false
+  xy: 124, 287
+  size: 32, 66
+  orig: 36, 68
+  offset: 4, 0
+  index: -1
+b_leg_02
+  rotate: false
+  xy: 131, 173
+  size: 26, 50
+  orig: 26, 53
+  offset: 0, 0
+  index: -1
+b_leg_04
+  rotate: false
+  xy: 141, 423
+  size: 22, 51
+  orig: 23, 52
+  offset: 1, 0
+  index: -1
+b_malk
+  rotate: true
+  xy: 54, 40
+  size: 49, 55
+  orig: 49, 57
+  offset: 0, 2
+  index: -1
+b_tail
+  rotate: 270
+  xy: 2, 303
+  size: 36, 44
+  orig: 37, 44
+  offset: 0, 0
+  index: -1
+b_yan
+  rotate: false
+  xy: 2, 216
+  size: 126, 79
+  orig: 129, 81
+  offset: 2, 1
+  index: -1
+f_body01
+  rotate: false
+  xy: 2, 402
+  size: 139, 109
+  orig: 140, 111
+  offset: 1, 0
+  index: -1
+f_ear_01
+  rotate: false
+  xy: 2, 400
+  size: 26, 26
+  orig: 26, 26
+  offset: 0, 0
+  index: -1
+f_ear_02
+  rotate: 270
+  xy: 114, 487
+  size: 24, 18
+  orig: 25, 24
+  offset: 1, 2
+  index: -1
+f_eye_01b
+  rotate: false
+  xy: 93, 503
+  size: 17, 7
+  orig: 17, 7
+  offset: 0, 0
+  index: -1
+f_eye_02b
+  rotate: false
+  xy: 154, 217
+  size: 15, 7
+  orig: 15, 7
+  offset: 0, 0
+  index: -1
+f_head
+  rotate: true
+  xy: 83, 76
+  size: 79, 72
+  orig: 81, 74
+  offset: 0, 0
+  index: -1
+f_leg01
+  rotate: false
+  xy: 146, 68
+  size: 24, 48
+  orig: 26, 49
+  offset: 0, 1
+  index: -1
+f_leg02
+  rotate: false
+  xy: 130, 224
+  size: 37, 60
+  orig: 37, 60
+  offset: 0, 0
+  index: -1
+f_leg04
+  rotate: 180
+  xy: 124, 355
+  size: 34, 66
+  orig: 35, 68
+  offset: 1, 2
+  index: -1
+f_milk
+  rotate: true
+  xy: 110, 21
+  size: 54, 42
+  orig: 55, 47
+  offset: 1, 1
+  index: -1
+f_tail
+  rotate: 270
+  xy: 113, 2
+  size: 27, 56
+  orig: 27, 56
+  offset: 0, 0
+  index: -1
+f_yan
+  rotate: false
+  xy: 2, 156
+  size: 127, 58
+  orig: 135, 63
+  offset: 7, 3
+  index: -1
+z
+  rotate: false
+  xy: 134, 480
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1

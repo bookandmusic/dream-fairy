@@ -1,0 +1,76 @@
+
+10413.png
+size: 512,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+0
+  rotate: true
+  xy: 349, 11
+  size: 49, 48
+  orig: 49, 62
+  offset: 0, 14
+  index: -1
+1
+  rotate: true
+  xy: 299, 8
+  size: 52, 48
+  orig: 52, 60
+  offset: 0, 12
+  index: -1
+2
+  rotate: false
+  xy: 299, 62
+  size: 50, 51
+  orig: 50, 65
+  offset: 0, 14
+  index: -1
+3
+  rotate: true
+  xy: 351, 62
+  size: 50, 47
+  orig: 50, 63
+  offset: 0, 16
+  index: -1
+Effects_smoke
+  rotate: false
+  xy: 400, 62
+  size: 30, 26
+  orig: 32, 32
+  offset: 1, 2
+  index: -1
+gran_01
+  rotate: false
+  xy: 400, 90
+  size: 17, 19
+  orig: 18, 21
+  offset: 0, 1
+  index: -1
+jx
+  rotate: false
+  xy: 2, 4
+  size: 140, 109
+  orig: 143, 110
+  offset: 2, 1
+  index: -1
+m1
+  rotate: true
+  xy: 144, 2
+  size: 111, 76
+  orig: 112, 82
+  offset: 0, 5
+  index: -1
+m2
+  rotate: true
+  xy: 222, 2
+  size: 111, 75
+  orig: 112, 76
+  offset: 0, 0
+  index: -1
+tz
+  rotate: false
+  xy: 399, 14
+  size: 34, 46
+  orig: 36, 47
+  offset: 1, 1
+  index: -1

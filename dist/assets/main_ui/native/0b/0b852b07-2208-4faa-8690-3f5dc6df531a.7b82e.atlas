@@ -1,0 +1,41 @@
+
+10044.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+12
+  rotate: true
+  xy: 587, 143
+  size: 61, 141
+  orig: 61, 141
+  offset: 0, 0
+  index: -1
+13
+  rotate: true
+  xy: 587, 206
+  size: 234, 228
+  orig: 234, 228
+  offset: 0, 0
+  index: -1
+13d
+  rotate: false
+  xy: 730, 194
+  size: 22, 10
+  orig: 22, 10
+  offset: 0, 0
+  index: -1
+bg
+  rotate: false
+  xy: 2, 442
+  size: 827, 530
+  orig: 827, 530
+  offset: 0, 0
+  index: -1
+bgx
+  rotate: false
+  xy: 2, 2
+  size: 583, 438
+  orig: 583, 438
+  offset: 0, 0
+  index: -1

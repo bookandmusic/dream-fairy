@@ -1,0 +1,104 @@
+
+water_map_eff.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+water_a_01
+  rotate: false
+  xy: 304, 3
+  size: 87, 57
+  orig: 89, 59
+  offset: 1, 1
+  index: -1
+water_a_02
+  rotate: false
+  xy: 393, 13
+  size: 79, 47
+  orig: 81, 49
+  offset: 1, 1
+  index: -1
+water_b_01
+  rotate: false
+  xy: 2, 173
+  size: 191, 151
+  orig: 193, 153
+  offset: 1, 1
+  index: -1
+water_b_02
+  rotate: false
+  xy: 195, 187
+  size: 197, 137
+  orig: 199, 139
+  offset: 1, 1
+  index: -1
+water_c_01
+  rotate: false
+  xy: 355, 62
+  size: 116, 67
+  orig: 118, 69
+  offset: 1, 1
+  index: -1
+water_c_02
+  rotate: false
+  xy: 190, 6
+  size: 112, 60
+  orig: 114, 63
+  offset: 1, 1
+  index: -1
+water_d_01
+  rotate: false
+  xy: 2, 65
+  size: 171, 106
+  orig: 173, 108
+  offset: 1, 1
+  index: -1
+water_d_02
+  rotate: false
+  xy: 195, 68
+  size: 158, 117
+  orig: 161, 119
+  offset: 1, 1
+  index: -1
+water_e_01
+  rotate: true
+  xy: 394, 131
+  size: 193, 41
+  orig: 195, 43
+  offset: 1, 1
+  index: -1
+water_e_02
+  rotate: true
+  xy: 437, 144
+  size: 180, 43
+  orig: 182, 45
+  offset: 1, 1
+  index: -1
+water_e_03
+  rotate: false
+  xy: 2, 24
+  size: 186, 39
+  orig: 188, 41
+  offset: 1, 1
+  index: -1
+water_f_01
+  rotate: true
+  xy: 482, 209
+  size: 115, 14
+  orig: 117, 16
+  offset: 1, 1
+  index: -1
+water_f_02
+  rotate: false
+  xy: 2, 2
+  size: 127, 20
+  orig: 129, 22
+  offset: 1, 1
+  index: -1
+water_f_03
+  rotate: true
+  xy: 482, 100
+  size: 107, 15
+  orig: 109, 17
+  offset: 1, 1
+  index: -1

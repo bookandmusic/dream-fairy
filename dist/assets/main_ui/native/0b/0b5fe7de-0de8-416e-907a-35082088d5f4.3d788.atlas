@@ -1,0 +1,27 @@
+
+cyclone.png
+size: 256,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cyclone01
+  rotate: false
+  xy: 96, 2
+  size: 44, 48
+  orig: 52, 51
+  offset: 8, 1
+  index: -1
+cyclone02
+  rotate: false
+  xy: 2, 2
+  size: 45, 48
+  orig: 46, 50
+  offset: 1, 1
+  index: -1
+cyclone03
+  rotate: false
+  xy: 49, 2
+  size: 45, 48
+  orig: 49, 49
+  offset: 2, 1
+  index: -1

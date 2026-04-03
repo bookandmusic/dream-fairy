@@ -1,0 +1,55 @@
+
+shout.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+four_01
+  rotate: false
+  xy: 230, 85
+  size: 168, 74
+  orig: 170, 76
+  offset: 1, 1
+  index: -1
+four_02
+  rotate: false
+  xy: 2, 67
+  size: 226, 92
+  orig: 228, 94
+  offset: 1, 1
+  index: -1
+four_03
+  rotate: false
+  xy: 2, 20
+  size: 242, 45
+  orig: 244, 47
+  offset: 1, 1
+  index: -1
+shout00
+  rotate: false
+  xy: 330, 14
+  size: 27, 30
+  orig: 29, 32
+  offset: 1, 1
+  index: -1
+shout01
+  rotate: false
+  xy: 246, 2
+  size: 82, 81
+  orig: 84, 83
+  offset: 1, 1
+  index: -1
+shout02
+  rotate: false
+  xy: 330, 46
+  size: 29, 37
+  orig: 31, 39
+  offset: 1, 1
+  index: -1
+shout03
+  rotate: false
+  xy: 359, 20
+  size: 20, 24
+  orig: 22, 26
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,48 @@
+
+rocking_chair_down.png
+size: 256,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+rocking_chair_01
+  rotate: false
+  xy: 2, 608
+  size: 170, 120
+  orig: 246, 174
+  offset: 40, 54
+  index: -1
+rocking_chair_2
+  rotate: false
+  xy: 2, 486
+  size: 170, 120
+  orig: 246, 174
+  offset: 40, 54
+  index: -1
+rocking_chair_3
+  rotate: false
+  xy: 2, 364
+  size: 170, 120
+  orig: 246, 174
+  offset: 40, 54
+  index: -1
+rocking_chair_4
+  rotate: false
+  xy: 2, 242
+  size: 170, 120
+  orig: 246, 174
+  offset: 40, 54
+  index: -1
+rocking_chair_5
+  rotate: false
+  xy: 2, 120
+  size: 170, 120
+  orig: 246, 174
+  offset: 40, 54
+  index: -1
+rocking_chair_yzx
+  rotate: false
+  xy: 2, 2
+  size: 175, 116
+  orig: 246, 174
+  offset: 53, 7
+  index: -1

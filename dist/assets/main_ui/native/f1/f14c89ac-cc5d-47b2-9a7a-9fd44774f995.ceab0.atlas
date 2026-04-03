@@ -1,0 +1,34 @@
+
+10045_1.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Zx
+  rotate: false
+  xy: 139, 2
+  size: 42, 50
+  orig: 44, 50
+  offset: 1, 0
+  index: -1
+a3a
+  rotate: true
+  xy: 2, 3
+  size: 117, 135
+  orig: 117, 135
+  offset: 0, 0
+  index: -1
+a3b
+  rotate: false
+  xy: 139, 54
+  size: 41, 66
+  orig: 41, 66
+  offset: 0, 0
+  index: -1
+qx
+  rotate: false
+  xy: 182, 72
+  size: 47, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1

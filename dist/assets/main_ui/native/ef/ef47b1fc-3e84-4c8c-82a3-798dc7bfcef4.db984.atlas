@@ -1,0 +1,20 @@
+
+IntelligenceCenter_star.png
+size: 256,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+star_02
+  rotate: false
+  xy: 2, 146
+  size: 151, 157
+  orig: 153, 160
+  offset: 1, 2
+  index: -1
+star_03
+  rotate: false
+  xy: 2, 2
+  size: 142, 142
+  orig: 184, 184
+  offset: 20, 21
+  index: -1

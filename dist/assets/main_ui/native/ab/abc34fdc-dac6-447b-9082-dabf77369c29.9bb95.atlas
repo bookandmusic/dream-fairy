@@ -1,0 +1,48 @@
+
+10042_2.png
+size: 128,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+j_01_31
+  rotate: false
+  xy: 2, 2
+  size: 29, 18
+  orig: 29, 18
+  offset: 0, 0
+  index: -1
+j_01_32
+  rotate: true
+  xy: 42, 20
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1
+j_03_1
+  rotate: false
+  xy: 2, 155
+  size: 82, 144
+  orig: 85, 145
+  offset: 0, 1
+  index: -1
+j_03_2
+  rotate: true
+  xy: 2, 52
+  size: 101, 85
+  orig: 102, 85
+  offset: 0, 0
+  index: -1
+j_03_3
+  rotate: true
+  xy: 33, 6
+  size: 13, 25
+  orig: 13, 25
+  offset: 0, 0
+  index: -1
+j_03_4
+  rotate: false
+  xy: 2, 22
+  size: 38, 28
+  orig: 38, 28
+  offset: 0, 0
+  index: -1

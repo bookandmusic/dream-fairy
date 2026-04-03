@@ -1,0 +1,168 @@
+name: Build Android APP
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      semver: ${{ steps.version.outputs.semver }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine version
+        id: version
+        run: |
+          if [[ "$GITHUB_REF_NAME" == v* ]]; then
+            VERSION=${GITHUB_REF_NAME#v}
+            SEMVER=$VERSION
+            echo "Tag triggered, version: $VERSION"
+          else
+            LAST_TAG=$(git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/tags | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -1)
+            if [ -n "$LAST_TAG" ]; then
+              BASE_VERSION=${LAST_TAG#v}
+              BUILD_NUM=$(git rev-list --count "${LAST_TAG}..HEAD" 2>/dev/null || echo "0")
+              BUILD_NUM=$((BUILD_NUM % 65536))
+              VERSION="${BASE_VERSION}.${BUILD_NUM}"
+              SEMVER="${BASE_VERSION}+${BUILD_NUM}"
+              echo "Manual trigger with last semver tag $LAST_TAG, version: $VERSION, semver: $SEMVER (commits since tag: $BUILD_NUM)"
+            else
+              BUILD_NUM=$(git rev-list --count HEAD 2>/dev/null || echo "1")
+              BUILD_NUM=$((BUILD_NUM % 65536))
+              VERSION="1.0.0.${BUILD_NUM}"
+              SEMVER="1.0.0+${BUILD_NUM}"
+              echo "Manual trigger without tag, version: $VERSION, semver: $SEMVER"
+            fi
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "semver=$SEMVER" >> $GITHUB_OUTPUT
+
+  build-android:
+    needs: get-version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android,armv7-linux-androideabi,i686-linux-android,x86_64-linux-android,x86_64-unknown-linux-gnu
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            src-tauri/target
+          key: android-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: android-cargo-
+
+      - name: Setup Android NDK
+        run: echo "ANDROID_NDK_HOME=$(ls -d $ANDROID_SDK_ROOT/ndk/* | sort -V | tail -n 1)" >> $GITHUB_ENV
+
+      - name: Restore Keystore
+        run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > $HOME/dreamfairy.keystore
+
+      - name: Update version
+        run: |
+          SEMVER=${{ needs.get-version.outputs.semver }}
+          VERSION=${{ needs.get-version.outputs.version }}
+          echo "Setting version to $SEMVER"
+          sed -i "s/\"version\": \".*\"/\"version\": \"$SEMVER\"/" src-tauri/tauri.conf.json
+          cat src-tauri/tauri.conf.json | grep version
+
+      - name: Build Android APK
+        run: cargo tauri android build --apk
+
+      - name: Sign APKs
+        run: |
+          VERSION=${{ needs.get-version.outputs.version }}
+          BUILD_TOOLS=$(ls -d $ANDROID_SDK_ROOT/build-tools/* | sort -V | tail -n 1)
+          mkdir -p signed-apk
+          
+          for apk in $(find src-tauri/gen/android/app/build/outputs/apk -name "*.apk" -type f); do
+            filename=$(basename "$apk")
+            if [[ "$filename" == *"universal"* ]]; then
+              final_name="DreamFairy_${VERSION}_android-universal.apk"
+              echo "Signing $filename -> $final_name"
+              $BUILD_TOOLS/zipalign -v 4 "$apk" "${apk%.apk}-aligned.apk"
+              $BUILD_TOOLS/apksigner sign \
+                --ks $HOME/dreamfairy.keystore \
+                --ks-pass pass:${{ secrets.KEYSTORE_PASS }} \
+                --ks-key-alias ${{ secrets.KEY_ALIAS }} \
+                --key-pass pass:${{ secrets.KEY_PASS }} \
+                --out "signed-apk/$final_name" \
+                "${apk%.apk}-aligned.apk"
+              rm "${apk%.apk}-aligned.apk"
+            fi
+          done
+          
+          echo "Signed APKs:"
+          ls -lh signed-apk/
+
+      - name: Upload Android artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: signed-apk
+
+  finalize-release:
+    needs: [get-version, build-android]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ needs.get-version.outputs.version }}
+          name: "梦想遇见童话 v${{ needs.get-version.outputs.version }}"
+          body: |
+            ## 下载说明
+            
+            | 平台 | 文件 | 说明 |
+            |------|------|------|
+            | Android | `DreamFairy_${{ needs.get-version.outputs.version }}_android-universal.apk` | 支持所有架构（arm64, armv7, x86, x86_64） |
+            
+            ### 安装说明
+            1. 下载 APK 文件
+            2. 在 Android 设备上安装（需要允许未知来源应用安装）
+            3. 享受游戏！
+            
+            ### 游戏特性
+            - 🎮 全屏沉浸式游戏体验
+            - 🎨 精美的游戏画面
+            - 📱 支持所有主流 Android 设备
+          draft: false
+          files: |
+            artifacts/**/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "梦想遇见童话",
+  "version": "1.0.0",
+  "identifier": "com.game.dreamfairy",
+  "build": {
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "梦想遇见童话",
+        "width": 720,
+        "height": 1280,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:;"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "publisher": "Game Studio",
+    "shortDescription": "梦想遇见童话 - 模拟经营游戏",
+    "longDescription": "梦想遇见童话是一款模拟经营类游戏",
+    "category": "Game",
+    "android": {
+      "minSdkVersion": 24
+    }
+  },
+  "plugins": {
+    "opener": {}
+  }
+}

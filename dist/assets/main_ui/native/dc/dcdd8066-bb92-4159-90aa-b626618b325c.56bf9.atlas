@@ -1,0 +1,27 @@
+
+butterfly.png
+size: 32,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+c_01
+  rotate: false
+  xy: 2, 32
+  size: 16, 20
+  orig: 16, 20
+  offset: 0, 0
+  index: -1
+c_02
+  rotate: false
+  xy: 2, 2
+  size: 16, 11
+  orig: 16, 11
+  offset: 0, 0
+  index: -1
+guan
+  rotate: false
+  xy: 2, 15
+  size: 15, 15
+  orig: 17, 17
+  offset: 1, 1
+  index: -1

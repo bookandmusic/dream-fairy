@@ -1,0 +1,188 @@
+
+land_ani_30002.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+lotus_s1_l1a
+  rotate: false
+  xy: 2, 80
+  size: 83, 101
+  orig: 87, 105
+  offset: 2, 2
+  index: -1
+lotus_s1_l1b
+  rotate: false
+  xy: 298, 65
+  size: 68, 88
+  orig: 92, 92
+  offset: 2, 2
+  index: -1
+lotus_s1_l2a
+  rotate: true
+  xy: 428, 399
+  size: 110, 67
+  orig: 114, 71
+  offset: 2, 2
+  index: -1
+lotus_s1_l2b
+  rotate: false
+  xy: 185, 17
+  size: 111, 64
+  orig: 116, 68
+  offset: 2, 2
+  index: -1
+lotus_s1_stem1
+  rotate: false
+  xy: 273, 85
+  size: 22, 68
+  orig: 26, 72
+  offset: 2, 1
+  index: -1
+lotus_s1_stem2
+  rotate: false
+  xy: 194, 254
+  size: 17, 66
+  orig: 21, 71
+  offset: 2, 2
+  index: -1
+lotus_s2_f1a
+  rotate: true
+  xy: 392, 29
+  size: 52, 83
+  orig: 57, 89
+  offset: 2, 3
+  index: -1
+lotus_s2_f1b
+  rotate: true
+  xy: 185, 88
+  size: 65, 86
+  orig: 69, 90
+  offset: 2, 2
+  index: -1
+lotus_s2_l1
+  rotate: true
+  xy: 395, 83
+  size: 148, 92
+  orig: 152, 96
+  offset: 2, 1
+  index: -1
+lotus_s2_l2
+  rotate: false
+  xy: 215, 297
+  size: 200, 102
+  orig: 204, 106
+  offset: 2, 2
+  index: -1
+lotus_s2_stem1
+  rotate: false
+  xy: 368, 79
+  size: 22, 68
+  orig: 26, 72
+  offset: 2, 2
+  index: -1
+lotus_s2_stem2
+  rotate: true
+  xy: 2, 22
+  size: 27, 102
+  orig: 31, 106
+  offset: 2, 2
+  index: -1
+lotus_s2_stem3
+  rotate: false
+  xy: 161, 51
+  size: 22, 147
+  orig: 24, 151
+  offset: 0, 3
+  index: -1
+lotus_s3_f1
+  rotate: true
+  xy: 298, 2
+  size: 61, 48
+  orig: 66, 52
+  offset: 3, 2
+  index: -1
+lotus_s3_f2
+  rotate: false
+  xy: 2, 283
+  size: 160, 115
+  orig: 164, 119
+  offset: 2, 2
+  index: -1
+lotus_s3_f3
+  rotate: true
+  xy: 417, 233
+  size: 164, 87
+  orig: 168, 92
+  offset: 2, 3
+  index: -1
+lotus_s3_f4
+  rotate: false
+  xy: 106, 7
+  size: 51, 42
+  orig: 56, 46
+  offset: 3, 2
+  index: -1
+lotus_s3_f5
+  rotate: true
+  xy: 164, 322
+  size: 76, 47
+  orig: 80, 51
+  offset: 2, 2
+  index: -1
+lotus_s3_l1
+  rotate: false
+  xy: 194, 155
+  size: 157, 97
+  orig: 162, 102
+  offset: 3, 2
+  index: -1
+lotus_s3_l2
+  rotate: false
+  xy: 215, 401
+  size: 211, 108
+  orig: 215, 113
+  offset: 2, 3
+  index: -1
+lotus_s3_stem1
+  rotate: false
+  xy: 368, 9
+  size: 22, 68
+  orig: 26, 72
+  offset: 2, 2
+  index: -1
+lotus_s3_stem2
+  rotate: false
+  xy: 164, 200
+  size: 28, 120
+  orig: 32, 124
+  offset: 2, 2
+  index: -1
+lotus_s3_stem3
+  rotate: false
+  xy: 373, 149
+  size: 20, 146
+  orig: 24, 151
+  offset: 2, 3
+  index: -1
+lotus_s4_l1
+  rotate: false
+  xy: 2, 183
+  size: 157, 98
+  orig: 163, 102
+  offset: 3, 2
+  index: -1
+lotus_s4_l2
+  rotate: false
+  xy: 2, 400
+  size: 211, 109
+  orig: 215, 113
+  offset: 2, 2
+  index: -1
+lotus_s4_stem3
+  rotate: true
+  xy: 213, 275
+  size: 20, 158
+  orig: 24, 162
+  offset: 2, 2
+  index: -1

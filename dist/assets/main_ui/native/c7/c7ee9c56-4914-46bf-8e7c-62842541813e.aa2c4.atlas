@@ -1,0 +1,27 @@
+
+10043_0.png
+size: 128,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fs_01
+  rotate: true
+  xy: 2, 2
+  size: 49, 39
+  orig: 49, 40
+  offset: 0, 0
+  index: -1
+fs_02
+  rotate: true
+  xy: 43, 2
+  size: 49, 39
+  orig: 49, 40
+  offset: 0, 0
+  index: -1
+fs_03
+  rotate: true
+  xy: 84, 2
+  size: 49, 39
+  orig: 49, 40
+  offset: 0, 0
+  index: -1

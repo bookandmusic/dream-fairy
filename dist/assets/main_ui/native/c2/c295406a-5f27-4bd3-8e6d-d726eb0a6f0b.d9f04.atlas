@@ -1,0 +1,48 @@
+
+pan.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+U_food_1
+  rotate: false
+  xy: 18, 108
+  size: 16, 15
+  orig: 17, 16
+  offset: 1, 1
+  index: -1
+U_food_2
+  rotate: true
+  xy: 36, 108
+  size: 15, 16
+  orig: 16, 17
+  offset: 1, 0
+  index: -1
+U_food_3
+  rotate: true
+  xy: 54, 108
+  size: 15, 16
+  orig: 15, 17
+  offset: 0, 0
+  index: -1
+U_food_4
+  rotate: false
+  xy: 2, 110
+  size: 14, 13
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+pan_01
+  rotate: false
+  xy: 2, 70
+  size: 97, 36
+  orig: 97, 36
+  offset: 0, 0
+  index: -1
+pan_02
+  rotate: false
+  xy: 2, 2
+  size: 99, 66
+  orig: 99, 67
+  offset: 0, 1
+  index: -1

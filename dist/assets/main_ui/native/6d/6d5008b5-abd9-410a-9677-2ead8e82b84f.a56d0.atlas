@@ -1,0 +1,118 @@
+
+fish_cage.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+baizi
+  rotate: true
+  xy: 295, 95
+  size: 53, 46
+  orig: 53, 46
+  offset: 0, 0
+  index: -1
+barrel_1
+  rotate: false
+  xy: 2, 200
+  size: 144, 135
+  orig: 144, 135
+  offset: 0, 0
+  index: -1
+drift_wood_1
+  rotate: 180
+  xy: 133, 3
+  size: 157, 46
+  orig: 157, 46
+  offset: 0, 0
+  index: -1
+fish_2
+  rotate: 270
+  xy: 266, 275
+  size: 95, 48
+  orig: 95, 48
+  offset: 0, 0
+  index: -1
+shui_1
+  rotate: false
+  xy: 182, 405
+  size: 31, 31
+  orig: 139, 70
+  offset: 50, 8
+  index: -1
+shui_2
+  rotate: false
+  xy: 247, 41
+  size: 64, 52
+  orig: 139, 70
+  offset: 42, 6
+  index: -1
+shui_3
+  rotate: false
+  xy: 182, 337
+  size: 92, 63
+  orig: 139, 70
+  offset: 26, 4
+  index: -1
+shui_4
+  rotate: false
+  xy: 2, 59
+  size: 107, 68
+  orig: 139, 70
+  offset: 18, 2
+  index: -1
+shui_5
+  rotate: true
+  xy: 126, 91
+  size: 116, 70
+  orig: 139, 70
+  offset: 14, 0
+  index: -1
+shui_6
+  rotate: false
+  xy: 2, 129
+  size: 122, 69
+  orig: 139, 70
+  offset: 10, 0
+  index: -1
+shui_7
+  rotate: true
+  xy: 148, 209
+  size: 126, 67
+  orig: 139, 70
+  offset: 9, 0
+  index: -1
+shui_8
+  rotate: false
+  xy: 2, 5
+  size: 129, 52
+  orig: 139, 70
+  offset: 7, 14
+  index: -1
+shui_9
+  rotate: true
+  xy: 217, 156
+  size: 133, 30
+  orig: 139, 70
+  offset: 4, 34
+  index: -1
+wave_1
+  rotate: true
+  xy: 193, 44
+  size: 283, 102
+  orig: 283, 102
+  offset: 0, 0
+  index: -1
+wave_2
+  rotate: true
+  xy: 269, 239
+  size: 178, 64
+  orig: 186, 64
+  offset: 8, 0
+  index: -1
+yz
+  rotate: false
+  xy: 2, 337
+  size: 178, 99
+  orig: 182, 103
+  offset: 2, 2
+  index: -1

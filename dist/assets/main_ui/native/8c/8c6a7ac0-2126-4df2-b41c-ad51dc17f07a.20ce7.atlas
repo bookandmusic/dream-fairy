@@ -1,0 +1,34 @@
+
+10041_1.png
+size: 128,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cgg_02
+  rotate: false
+  xy: 2, 56
+  size: 107, 139
+  orig: 107, 139
+  offset: 0, 0
+  index: -1
+cgg_dg01
+  rotate: false
+  xy: 2, 2
+  size: 76, 52
+  orig: 81, 59
+  offset: 3, 0
+  index: -1
+shan_02
+  rotate: false
+  xy: 80, 25
+  size: 17, 29
+  orig: 17, 30
+  offset: 0, 1
+  index: -1
+shan_02e
+  rotate: false
+  xy: 80, 11
+  size: 9, 12
+  orig: 9, 13
+  offset: 0, 1
+  index: -1

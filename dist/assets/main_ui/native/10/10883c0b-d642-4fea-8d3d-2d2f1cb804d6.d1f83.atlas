@@ -1,0 +1,13 @@
+
+10043_d.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg
+  rotate: false
+  xy: 2, 2
+  size: 901, 581
+  orig: 901, 582
+  offset: 0, 1
+  index: -1

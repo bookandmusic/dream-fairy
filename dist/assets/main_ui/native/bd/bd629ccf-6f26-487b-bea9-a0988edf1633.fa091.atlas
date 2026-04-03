@@ -1,0 +1,181 @@
+
+water_eff.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+w_01
+  rotate: false
+  xy: 266, 404
+  size: 3, 2
+  orig: 3, 2
+  offset: 0, 0
+  index: -1
+w_02
+  rotate: false
+  xy: 307, 488
+  size: 15, 18
+  orig: 15, 18
+  offset: 0, 0
+  index: -1
+w_03
+  rotate: false
+  xy: 300, 369
+  size: 18, 19
+  orig: 18, 21
+  offset: 0, 2
+  index: -1
+w_04
+  rotate: false
+  xy: 295, 450
+  size: 22, 24
+  orig: 22, 24
+  offset: 0, 0
+  index: -1
+w_05
+  rotate: false
+  xy: 294, 419
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+w_06
+  rotate: false
+  xy: 266, 447
+  size: 27, 27
+  orig: 27, 27
+  offset: 0, 0
+  index: -1
+w_07
+  rotate: false
+  xy: 266, 417
+  size: 26, 28
+  orig: 27, 28
+  offset: 1, 0
+  index: -1
+w_08
+  rotate: false
+  xy: 259, 301
+  size: 25, 28
+  orig: 25, 28
+  offset: 0, 0
+  index: -1
+w_09
+  rotate: false
+  xy: 286, 300
+  size: 22, 29
+  orig: 22, 29
+  offset: 0, 0
+  index: -1
+w_1
+  rotate: false
+  xy: 2, 189
+  size: 224, 108
+  orig: 226, 110
+  offset: 1, 1
+  index: -1
+w_10
+  rotate: false
+  xy: 300, 390
+  size: 18, 27
+  orig: 18, 27
+  offset: 0, 0
+  index: -1
+w_11
+  rotate: false
+  xy: 275, 410
+  size: 8, 5
+  orig: 8, 5
+  offset: 0, 0
+  index: -1
+w_12
+  rotate: false
+  xy: 266, 408
+  size: 7, 7
+  orig: 10, 7
+  offset: 3, 0
+  index: -1
+w_2
+  rotate: false
+  xy: 2, 90
+  size: 234, 97
+  orig: 236, 98
+  offset: 1, 1
+  index: -1
+w_3
+  rotate: false
+  xy: 2, 403
+  size: 262, 103
+  orig: 263, 103
+  offset: 1, 0
+  index: -1
+w_4
+  rotate: false
+  xy: 2, 299
+  size: 255, 102
+  orig: 257, 103
+  offset: 1, 1
+  index: -1
+w_5
+  rotate: true
+  xy: 326, 75
+  size: 211, 85
+  orig: 212, 85
+  offset: 0, 0
+  index: -1
+w_6
+  rotate: true
+  xy: 326, 288
+  size: 218, 87
+  orig: 220, 88
+  offset: 1, 1
+  index: -1
+w_7
+  rotate: true
+  xy: 238, 68
+  size: 229, 86
+  orig: 230, 86
+  offset: 1, 0
+  index: -1
+w_8
+  rotate: false
+  xy: 2, 2
+  size: 234, 86
+  orig: 235, 87
+  offset: 0, 0
+  index: -1
+y_01
+  rotate: false
+  xy: 322, 27
+  size: 76, 39
+  orig: 76, 39
+  offset: 0, 0
+  index: -1
+y_02
+  rotate: false
+  xy: 266, 476
+  size: 39, 30
+  orig: 39, 30
+  offset: 0, 0
+  index: -1
+y_03
+  rotate: false
+  xy: 238, 23
+  size: 82, 43
+  orig: 82, 43
+  offset: 0, 0
+  index: -1
+y_04
+  rotate: true
+  xy: 259, 331
+  size: 70, 39
+  orig: 70, 39
+  offset: 0, 0
+  index: -1
+y_05
+  rotate: false
+  xy: 238, 5
+  size: 37, 16
+  orig: 37, 16
+  offset: 0, 0
+  index: -1

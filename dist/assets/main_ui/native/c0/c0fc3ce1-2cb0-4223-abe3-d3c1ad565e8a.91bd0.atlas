@@ -1,0 +1,132 @@
+
+40001_car.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+01
+  rotate: true
+  xy: 247, 153
+  size: 188, 199
+  orig: 188, 199
+  offset: 0, 0
+  index: -1
+01j1
+  rotate: false
+  xy: 421, 108
+  size: 17, 23
+  orig: 17, 23
+  offset: 0, 0
+  index: -1
+01j2
+  rotate: false
+  xy: 433, 28
+  size: 13, 23
+  orig: 13, 23
+  offset: 0, 0
+  index: -1
+01pl2
+  rotate: false
+  xy: 170, 62
+  size: 149, 89
+  orig: 149, 104
+  offset: 0, 15
+  index: -1
+02
+  rotate: false
+  xy: 2, 16
+  size: 166, 142
+  orig: 166, 142
+  offset: 0, 0
+  index: -1
+03
+  rotate: false
+  xy: 321, 53
+  size: 98, 98
+  orig: 98, 98
+  offset: 0, 0
+  index: -1
+04
+  rotate: false
+  xy: 2, 160
+  size: 243, 181
+  orig: 243, 181
+  offset: 0, 0
+  index: -1
+d
+  rotate: false
+  xy: 230, 16
+  size: 50, 44
+  orig: 50, 44
+  offset: 0, 0
+  index: -1
+jj2
+  rotate: false
+  xy: 401, 21
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+lun
+  rotate: true
+  xy: 170, 5
+  size: 55, 58
+  orig: 55, 58
+  offset: 0, 0
+  index: -1
+lun01
+  rotate: false
+  xy: 322, 12
+  size: 39, 39
+  orig: 39, 39
+  offset: 0, 0
+  index: -1
+r2
+  rotate: true
+  xy: 421, 53
+  size: 27, 23
+  orig: 27, 23
+  offset: 0, 0
+  index: -1
+r3
+  rotate: false
+  xy: 2, 2
+  size: 20, 12
+  orig: 20, 12
+  offset: 0, 0
+  index: -1
+r4
+  rotate: false
+  xy: 421, 82
+  size: 21, 24
+  orig: 22, 24
+  offset: 0, 0
+  index: -1
+r5
+  rotate: false
+  xy: 282, 10
+  size: 38, 41
+  orig: 38, 41
+  offset: 0, 0
+  index: -1
+r8
+  rotate: false
+  xy: 421, 133
+  size: 23, 15
+  orig: 23, 15
+  offset: 0, 0
+  index: -1
+smoke
+  rotate: false
+  xy: 401, 2
+  size: 18, 17
+  orig: 20, 20
+  offset: 1, 2
+  index: -1
+xian
+  rotate: false
+  xy: 363, 14
+  size: 36, 37
+  orig: 36, 37
+  offset: 0, 0
+  index: -1
