@@ -3,7 +3,10 @@
     
     const STORE_NAME = 'game-backup.json';
     const BACKUP_KEY_PREFIX = 'backup_';
+    const EXTERNAL_BACKUP_FILE = 'game-backup-external.json';
     const DEBUG = false;
+    const MAX_TAURI_WAIT_ATTEMPTS = 50;
+    const EXTERNAL_FLUSH_DEBOUNCE_MS = 1000;
     
     function log(...args) {
         if (DEBUG) console.log('[StoreBackup]', ...args);
@@ -39,6 +42,10 @@
     
     function isTauriEnv() {
         return !!(window.__TAURI__ && window.__TAURI__.store);
+    }
+    
+    function isTauriFsAvailable() {
+        return !!(window.__TAURI__ && window.__TAURI__.fs && window.__TAURI__.path);
     }
     
     const originalSetItem = localStorage.setItem.bind(localStorage);
@@ -80,9 +87,9 @@
             }
             
             await store.save();
-            log('Backup saved, operations:', batch.length);
+            log('Internal backup saved, operations:', batch.length);
         } catch (e) {
-            console.error('[StoreBackup] Backup failed:', e);
+            console.error('[StoreBackup] Internal backup failed:', e);
         } finally {
             isProcessing = false;
             if (backupQueue.length > 0) {
@@ -99,6 +106,121 @@
             initStore().then(() => {
                 if (storeReady) processBackupQueue();
             });
+        }
+        
+        backupToExternal(task);
+    }
+    
+    let externalBackupData = {};
+    let externalBackupPath = null;
+    let externalBackupInitialized = false;
+    let externalFlushTimer = null;
+    let isPageUnloading = false;
+    
+    window.addEventListener('beforeunload', function() {
+        isPageUnloading = true;
+        if (externalFlushTimer) {
+            clearTimeout(externalFlushTimer);
+        }
+    });
+    
+    async function getExternalBackupDir() {
+        try {
+            if (!isTauriFsAvailable()) return null;
+            const docDir = await window.__TAURI__.path.documentDir();
+            return docDir;
+        } catch (e) {
+            console.error('[StoreBackup] Failed to get external path:', e);
+            return null;
+        }
+    }
+    
+    async function getExternalBackupPath() {
+        const dir = await getExternalBackupDir();
+        if (!dir) return null;
+        return dir + '/' + EXTERNAL_BACKUP_FILE;
+    }
+    
+    async function initExternalBackup() {
+        if (externalBackupInitialized) return;
+        
+        try {
+            externalBackupPath = await getExternalBackupPath();
+            if (!externalBackupPath) return;
+            
+            const exists = await window.__TAURI__.fs.exists(externalBackupPath);
+            if (exists) {
+                const content = await window.__TAURI__.fs.readTextFile(externalBackupPath);
+                const parsed = JSON.parse(content);
+                if (parsed && typeof parsed === 'object') {
+                    externalBackupData = parsed.data || parsed;
+                } else {
+                    externalBackupData = {};
+                }
+            } else {
+                externalBackupData = {};
+            }
+            
+            externalBackupInitialized = true;
+            log('External backup initialized at:', externalBackupPath);
+        } catch (e) {
+            console.error('[StoreBackup] External backup init failed:', e);
+        }
+    }
+    
+    async function flushExternalBackup() {
+        if (!externalBackupInitialized || !externalBackupPath || isPageUnloading) return;
+        
+        clearTimeout(externalFlushTimer);
+        externalFlushTimer = setTimeout(async () => {
+            try {
+                await window.__TAURI__.fs.writeTextFile(
+                    externalBackupPath,
+                    JSON.stringify(externalBackupData)
+                );
+                log('External backup flushed');
+            } catch (e) {
+                const errorMsg = e.message || e.toString();
+                if (errorMsg.includes('ENOENT') || errorMsg.includes('No such file') || errorMsg.includes('not found')) {
+                    try {
+                        const dirPath = externalBackupPath.substring(0, externalBackupPath.lastIndexOf('/'));
+                        await window.__TAURI__.fs.mkdir(dirPath, { recursive: true });
+                        await window.__TAURI__.fs.writeTextFile(
+                            externalBackupPath,
+                            JSON.stringify(externalBackupData)
+                        );
+                        log('External backup flushed after creating dir');
+                    } catch (e2) {
+                        console.error('[StoreBackup] External flush retry failed:', e2);
+                    }
+                } else {
+                    console.error('[StoreBackup] External flush failed:', e);
+                }
+            }
+        }, EXTERNAL_FLUSH_DEBOUNCE_MS);
+    }
+    
+    async function backupToExternal(task) {
+        if (!isTauriFsAvailable()) return;
+        
+        if (!externalBackupInitialized) {
+            await initExternalBackup();
+        }
+        
+        if (!externalBackupInitialized) return;
+        
+        try {
+            if (task.type === 'set') {
+                externalBackupData[task.key] = task.value;
+            } else if (task.type === 'remove') {
+                delete externalBackupData[task.key];
+            } else if (task.type === 'clear') {
+                externalBackupData = {};
+            }
+            
+            flushExternalBackup();
+        } catch (e) {
+            console.error('[StoreBackup] External backup failed:', e);
         }
     }
     
@@ -129,45 +251,58 @@
             return 0;
         }
         
+        let restored = 0;
+        
         await initStore();
         const store = getStore();
-        if (!store) {
-            log('Store not available');
-            return 0;
-        }
-        
-        try {
-            const keys = await store.keys();
-            const backupKeys = keys.filter(k => k.startsWith(BACKUP_KEY_PREFIX));
-            
-            if (backupKeys.length === 0) {
-                log('No backup found');
-                return 0;
-            }
-            
-            let restored = 0;
-            for (const backupKey of backupKeys) {
-                const originalKey = backupKey.replace(BACKUP_KEY_PREFIX, '');
-                const existingValue = originalGetItem(originalKey);
+        if (store) {
+            try {
+                const keys = await store.keys();
+                const backupKeys = keys.filter(k => k.startsWith(BACKUP_KEY_PREFIX));
                 
-                if (!existingValue) {
-                    const value = await store.get(backupKey);
-                    if (value !== null && value !== undefined) {
-                        originalSetItem(originalKey, value);
-                        restored++;
-                        log('Restored:', originalKey);
+                if (backupKeys.length === 0) {
+                    log('No internal backup found');
+                } else {
+                    for (const backupKey of backupKeys) {
+                        const originalKey = backupKey.replace(BACKUP_KEY_PREFIX, '');
+                        const existingValue = originalGetItem(originalKey);
+                        
+                        if (!existingValue) {
+                            const value = await store.get(backupKey);
+                            if (value !== null && value !== undefined) {
+                                originalSetItem(originalKey, value);
+                                restored++;
+                                log('Restored from internal:', originalKey);
+                            }
+                        }
                     }
                 }
+            } catch (e) {
+                console.error('[StoreBackup] Internal restore failed:', e);
             }
-            
-            if (restored > 0) {
-                console.log('[StoreBackup] Restored', restored, 'items from backup');
-            }
-            return restored;
-        } catch (e) {
-            console.error('[StoreBackup] Restore failed:', e);
-            return 0;
         }
+        
+        if (isTauriFsAvailable()) {
+            try {
+                await initExternalBackup();
+                if (externalBackupInitialized && externalBackupData) {
+                    for (const [key, value] of Object.entries(externalBackupData)) {
+                        if (!originalGetItem(key)) {
+                            originalSetItem(key, value);
+                            restored++;
+                            log('Restored from external:', key);
+                        }
+                    }
+                }
+            } catch (e) {
+                console.error('[StoreBackup] External restore failed:', e);
+            }
+        }
+        
+        if (restored > 0) {
+            console.log('[StoreBackup] Restored', restored, 'items from backup');
+        }
+        return restored;
     }
     
     async function fullBackupToStore() {
@@ -193,7 +328,7 @@
             
             if (backedUp > 0) {
                 await store.save();
-                console.log('[StoreBackup] Full backup completed:', backedUp, 'items');
+                console.log('[StoreBackup] Full internal backup completed:', backedUp, 'items');
             }
             return backedUp;
         } catch (e) {
@@ -214,9 +349,8 @@
         restoreStarted = true;
         
         let attempts = 0;
-        const maxAttempts = 50;
         
-        while (!isTauriEnv() && attempts < maxAttempts) {
+        while (!isTauriEnv() && attempts < MAX_TAURI_WAIT_ATTEMPTS) {
             await new Promise(r => setTimeout(r, 100));
             attempts++;
         }
@@ -237,7 +371,19 @@
         restore: restoreFromBackup,
         fullBackup: fullBackupToStore,
         isReady: isTauriEnv,
-        waitForRestore: () => restoreCompletePromise
+        waitForRestore: () => restoreCompletePromise,
+        exportNow: () => flushExternalBackup(),
+        getExternalPath: getExternalBackupPath,
+        hasExternal: async () => {
+            if (!isTauriFsAvailable()) return false;
+            const path = await getExternalBackupPath();
+            if (!path) return false;
+            try {
+                return await window.__TAURI__.fs.exists(path);
+            } catch (e) {
+                return false;
+            }
+        }
     };
     
     let originalBoot = null;
