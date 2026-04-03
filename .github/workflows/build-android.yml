@@ -96,6 +96,9 @@ jobs:
           sed -i "s/\"version\": \".*\"/\"version\": \"$SEMVER\"/" src-tauri/tauri.conf.json
           cat src-tauri/tauri.conf.json | grep version
 
+      - name: Install Tauri CLI
+        run: cargo install tauri-cli
+
       - name: Build Android APK
         run: cargo tauri android build --apk
 
